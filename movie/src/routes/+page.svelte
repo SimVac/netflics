@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script context="module">
+        const url = 'https://api.themoviedb.org/3/movie/popular?api_key=&language=en-US&page=1';
+
+        fetch(url)
+        .then((res) => res.json())
+        .then((json) => console.log(json))
+        .catch(err => console.error('error:' + err));
+
+
+</script>
+
+<script>
+
+</script>
