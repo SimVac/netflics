@@ -3,7 +3,7 @@
 	export async function load ({fetch}){
 		console.log("ciao")
 		const res = await fetch (
-			`https://api.themoviedb.org/3/movie/popular?api_key=80390a3069aa4ba033c8010d672709bc&language=en-US&page=1`
+			`https://api.themoviedb.org/3/movie/popular?api_key=c&language=en-US&page=1`
 		);
 		const data = await res.json();
 		console.log(data)
