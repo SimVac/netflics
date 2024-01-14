@@ -1,39 +1,61 @@
 <script context="module">
-	
-	export async function load ({fetch}){
-		console.log("ciao")
-		const res = await fetch (
-			`https://api.themoviedb.org/3/movie/popular?api_key=c&language=en-US&page=1`
-		);
-		const data = await res.json();
-		console.log(data)
-		if (res.ok){
-			return{
-				props : {popular: data.results}
-			}
-		}
-	}
-	load();
-	
-	/*const url =
-		'https://api.themoviedb.org/3/movie/popular?api_key=80390a3069aa4ba033c8010d672709bc&language=en-US&page=1';
+	import {onMount} from "svelte";
+	// export async function load ({fetch}){
+	// 	console.log("ciao")
+	// 	const res = await fetch (
+	// 		`https://api.themoviedb.org/3/movie/popular?api_key=&language=en-US&page=1`
+	// 	);
+	// 	const data = await res.json();
+	// 	console.log(data)
+	// 	if (res.ok){
+	// 		return data.results
+	// 	}
+	// }
+	// load().then((res) => {props: {popular: res}});
 
-	fetch(url)
-		.then((res) => res.json())
-		.then((json) => {
-			console.log(json);
-			porps: {popular : json};
-		})
-		.catch((err) => console.error('error:' + err));*/
+	const url =
+		'https://api.themoviedb.org/3/movie/popular?api_key=&language=it';
+
+	// let info;
+	// export async function load (){
+	// 	fetch(url)
+	// 	.then((res) => res.json())
+	// 	.then((json) => {
+	// 		console.log(json);
+	// 		info = json;
+	// 	})
+	// 	.catch((err) => console.error('error:' + err));
+	// 	return{
+	// 		props: {popular: info}
+	// 	}
+	// }
+
+	// export async function load({ fetch }) {
+	// 	const res = await fetch(url);
+	// 	const item = await res.json();
+
+	// 	console.log(item)
+	// 	return { item };
+	// }
+
+	export const get_data = async() =>{
+		const res = await fetch(url);
+		const data = await res.json();
+		console.log(data);
+		return data.results;
+	};
 
 </script>
 
 <script>
-	import PopularMovies from './components/PopularMovies.svelte';
+	import PopularMovies from '../components/PopularMovies.svelte';
 	export let popular = [];
-	console.log(popular)
+	onMount( async() => {
+		popular = await get_data();
+		console.log(typeof popular)
+	})
 </script>
 
 <section>
-	<PopularMovies movies={popular} />
+	<PopularMovies bind:movies={ popular }/>
 </section>
