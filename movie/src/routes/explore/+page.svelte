@@ -2,7 +2,7 @@
 	import {onMount} from "svelte";
 
 	const url =
-		'https://api.themoviedb.org/3/movie/popular?api_key=&language=it';
+		'https://api.themoviedb.org/3/movie/popular?api_key=80390a3069aa4ba033c8010d672709bc&language=it';
 
 	export const get_data = async() =>{
 		const res = await fetch(url);
