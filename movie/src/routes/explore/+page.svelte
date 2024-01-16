@@ -4,8 +4,6 @@
 	const url =
 		'https://api.themoviedb.org/3/movie/popular?api_key=&language=it';
 
-
-
 	export const get_data = async() =>{
 		const res = await fetch(url);
 		const data = await res.json();
