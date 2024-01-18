@@ -1,7 +1,5 @@
 <script>
     export let movies;
-    // setTimeout(() => {console.log("movie" + popular[0])}, 4000)
-    console.log("movie " + movies)
 
     import MovieCard from "./MovieCard.svelte"
 </script>
