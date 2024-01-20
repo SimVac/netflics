@@ -1,7 +1,7 @@
 <script>
     export let movies;
 
-    import MovieCard from "./MovieCard.svelte"
+    import MovieCard from "$lib/components/MovieCard.svelte"
 </script>
 
 <h3>Popular Movies: </h3>

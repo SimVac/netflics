@@ -1,3 +1,5 @@
 <h1>Netflics</h1>
-<button></button>
-<a href="/explore">esplora</a>
+<button><a href="/explore">Esplora</a></button>
+<button><a href="/explore">Watchlist</a></button>
+
+
