@@ -19,7 +19,7 @@
 			<span>Relase Date:</span> {details.release_date} <br>
 			<span>Genres: </span>
 				{#each details.genres as genre}
-					{genre.name}
+					{genre.name + " "}
 				{/each}
 			 <br>
 			<span>Rating:</span> {details.vote_average} <br>
