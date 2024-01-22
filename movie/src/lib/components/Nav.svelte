@@ -2,7 +2,7 @@
     <nav>
         <a href="/">Home</a>
         <a href="/explore">Explore</a>
-        <a href="/"></a>
+        <a href="/">WatchList</a>
     </nav>
 </div>
 
