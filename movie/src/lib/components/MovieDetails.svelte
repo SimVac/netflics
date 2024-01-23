@@ -7,7 +7,7 @@
 	export let aggiunto = false;
 
 	function rimuovi(){
-		if (confirm("Sei sicuro di voler rimuovere il film dalla lista?")){
+		if (confirm("The movie will be deleted from the list")){
 			aggiunto = false;
 		}
 	}
@@ -29,9 +29,9 @@
 		<div class="title">
 			<h1>{details.title}</h1>
 			{#if !aggiunto}
-				<button class="icon" on:click={aggiungi}>Aggiungi</button>
+				<button class="icon" on:click={aggiungi}>Add</button>
 				{:else}
-					<button class="icon" on:click={rimuovi}>Aggiunto</button>
+					<button class="icon" on:click={rimuovi}>Remove</button>
 			{/if}
 			
 		</div>

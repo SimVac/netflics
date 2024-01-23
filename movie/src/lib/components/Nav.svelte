@@ -2,7 +2,8 @@
     <nav>
         <a href="/">Home</a>
         <a href="/explore">Explore</a>
-        <a href="/">WatchList</a>
+        <a href="/watchlist">WatchList</a>
+        <a href="/about">About us</a>
     </nav>
 </div>
 
@@ -12,7 +13,7 @@
         min-height: 10vh;
         align-items: center;
         justify-content: space-around;
-        width: 20vw;
+        width: 25vw;
         background: rgba(255, 255, 255, 0.07);
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
