@@ -1,4 +1,4 @@
-export const prerender = true;
+
 export async function load({ url }) {
     const urlAPI = 'https://api.themoviedb.org/3/movie/popular?api_key=80390a3069aa4ba033c8010d672709bc&lang=it';
     const popular = await get_data(urlAPI);
