@@ -1,11 +1,12 @@
 <script>
+	import {fly} from "svelte/transition"
     export let details;
 	export let path = 'https://image.tmdb.org/t/p/original';
 	path = path.concat(details.backdrop_path);
 	console.log(details)
 </script>
 
-<div class="movie-details">
+<div class="movie-details" in:fly={{y: 50, duration:500, delay: 500}} out:fly={{y: 0, duration:500}}>
 	<div class="img-container">
 		<img
 			src={path}
