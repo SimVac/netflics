@@ -10,9 +10,3 @@
 	<SearchMovie />
 	<PopularMovies {movies}/>
 </section>
-
-<style>
-	:global(body){
-		background: #fff;
-	}
-</style>

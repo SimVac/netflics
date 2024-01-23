@@ -4,6 +4,18 @@
 	export let path = 'https://image.tmdb.org/t/p/original';
 	path = path.concat(details.backdrop_path);
 	console.log(details)
+	export let aggiunto = false;
+
+	function rimuovi(){
+		if (confirm("Sei sicuro di voler rimuovere il film dalla lista?")){
+			aggiunto = false;
+		}
+	}
+
+	function aggiungi(){
+		aggiunto = true;
+	}
+
 </script>
 
 <div class="movie-details" in:fly={{y: 50, duration:500, delay: 500}} out:fly={{y: 0, duration:500}}>
@@ -14,7 +26,15 @@
 		/>
 	</div>
 	<div class="text-container">
-		<h1>{details.title}</h1>
+		<div class="title">
+			<h1>{details.title}</h1>
+			{#if !aggiunto}
+				<button class="icon" on:click={aggiungi}>Aggiungi</button>
+				{:else}
+					<button class="icon" on:click={rimuovi}>Aggiunto</button>
+			{/if}
+			
+		</div>
 		<p>{details.overview}</p>
 		<p>
 			<span>Relase Date:</span> {details.release_date} <br>
@@ -31,6 +51,26 @@
 </div>
 
 <style>
+	.title{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.icon{
+		height: 5vh;
+		width: 5vw;
+		font-style: bold;
+		margin: 1rem 0rem 2rem;
+		color: rgb(255, 255, 255);
+		background-color: transparent;
+		border-style: none;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	.icon:hover{
+		color: #000;
+		background-color: rgb(255, 255, 255);
+	}
 	h1{
 		padding: 1rem 0rem 2rem;
 	}
