@@ -4,15 +4,20 @@
 	export let path = 'https://image.tmdb.org/t/p/original';
 	path = path.concat(details.backdrop_path);
 	console.log(details)
-	export let aggiunto = false;
+	export let aggiunto = (JSON.parse(localStorage.watchlist || "[]") || []).includes(details.id);
 
 	function rimuovi(){
-		if (confirm("The movie will be deleted from the list")){
-			aggiunto = false;
-		}
+		let watchlist = JSON.parse(localStorage.watchlist || "[]") || [];
+		watchlist = watchlist.filter(element => element !== details.id);
+		localStorage.watchlist = JSON.stringify(watchlist)
+		aggiunto = false;
 	}
 
 	function aggiungi(){
+		let watchlist = JSON.parse(localStorage.watchlist || "[]") || [];
+		if (!watchlist.includes(details.id))
+			watchlist.push(details.id);
+		localStorage.watchlist = JSON.stringify(watchlist)
 		aggiunto = true;
 	}
 

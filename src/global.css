@@ -5,9 +5,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: #fff
+    color: #fff;
 }
 
 body{
     margin: 0 10%;
+    background: rgb(0,  0, 0);
+    --neon-text-color: rgb(255, 0, 0);
+    --neon-border-color: rgb(0, 51, 255);
 }

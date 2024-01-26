@@ -60,13 +60,6 @@
         flex-direction: column;
         justify-content: space-around;
     }
-    
-    :global(body) {
-        /* background-image: url("home_wallpaper.jpg"); */
-        background: rgb(0,  0, 0);
-        --neon-text-color: rgb(255, 0, 0);
-        --neon-border-color: rgb(0, 51, 255);
-    }
 
     h1 {
         font-size: 12vw;
@@ -77,7 +70,7 @@
         border: 0.4rem solid #fff;
         border-radius: 2rem;
         text-transform: uppercase;
-        animation: flicker 80s infinite alternate;
+        animation: flicker 50s infinite alternate;
     }
 
     .centered {
