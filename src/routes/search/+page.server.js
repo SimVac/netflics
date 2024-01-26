@@ -1,8 +1,5 @@
-import { API_KEY } from '$lib/env';
-
 const get_details = (async(searched) => {
-    const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searched}`;
-    const res = await fetch(apiUrl);
+    const res = await fetch('/api/search?' + new URLSearchParams({searched}));
     const movieDetails = await res.json();
     return { movieDetails };
 })

@@ -7,7 +7,7 @@
 
 <div in:fly={{y: 50, duration:500, delay: 500}} out:fly={{y: 0, duration:500}}>
     <h1>Your watchlist</h1>
-    <span>{movies.length} elements</span>
+    <span>{movies.length == 1 ? movies.length + " movie" : movies.length + " movies"}</span>
 
     <div class="cont" >
         {#each movies as movie}

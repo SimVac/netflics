@@ -1,8 +1,7 @@
 import { API_KEY } from '$lib/env';
 
 export async function load({ url }) {
-    const urlAPI = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&lang=it`;
-    const popular = await get_data(urlAPI);
+    const popular = await get_data('/api/popular');
     return { popular };
 }
 
