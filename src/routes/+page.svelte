@@ -71,6 +71,7 @@
         border-radius: 2rem;
         text-transform: uppercase;
         animation: flicker 50s infinite alternate;
+        user-select: none;
     }
 
     .centered {
