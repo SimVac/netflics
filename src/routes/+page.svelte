@@ -52,6 +52,7 @@
 
     p{
         font-size: x-large;
+        user-select: none;
     }
 
     .cont{
