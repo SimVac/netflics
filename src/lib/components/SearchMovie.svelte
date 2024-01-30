@@ -25,7 +25,7 @@
     on:blur={cancelInactive}
     bind:value={inputValue} 
     type="text" name="search_movie" placeholder="Search movie"
-    class={active ? 'selected' : ''}>
+    class={active ? 'selected' : ''} autocomplete="off">
 
     {#if inputValue}
         <button
